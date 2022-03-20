@@ -1,0 +1,39 @@
+<!-- Este HTML contiene estilos del BODY (se llamara desde el TEMPLATE del BODY.COMPONENT.TS)-->
+
+<div class="row">
+    <div class="col">
+        <!-- funcionalidad deñ NG IF -->
+        <h1>*ngIf</h1>
+        <hr>
+
+        <!-- esto es una CARD de BOOTSTRAP que se mostrará u ocultará según el NG IF-->
+        <div *ngIf="mostrar" class="card text-white bg-primary mb-3" style="width: 100%;">
+            <div class="card-body">
+              
+                <!-- mostramos el AUTOR Y MENSAJE generado en BODY.COMPONENT.TS -->
+              <h5 class="card-title">{{frase.autor}}</h5>
+              <p class="card-text">{{ frase.mensaje }}</p>
+            </div>
+          </div>
+
+          <!-- creamos un boton con la función CLICK que ejecutará el NG IF-->
+          <button (click)=" mostrar = !mostrar " class="btn btn-outline-primary" style="width: 100%;">
+              Mostrar/Ocultar
+          </button>
+
+    </div>
+
+    <div class="col">
+        <!-- funcionalidad deñ NG FOR -->
+        <h1>*ngFor</h1>
+        <hr>
+
+        <!-- esto es una LIST de BOOTSTRAP -->
+        <ul class="list-group">
+            <!-- mostramos el arreglo de CANTANTES generado en BODY.COMPONENT.TS según funcionalidad de NG FOR -->
+            <!-- en NG FOR declaramos variables (cantante y numeración) y llamamos a los CANTANTES y al número-->
+            <li *ngFor="let cantante of cantantes; let i = index" class="list-group-item"> {{ i+1 }} - {{ cantante }}</li>
+          </ul>
+
+    </div>
+</div>
